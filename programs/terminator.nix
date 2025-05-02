@@ -15,7 +15,4 @@
         scrollback_lines = 2000;
      };
   };
-  
-
-  
 }
