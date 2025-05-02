@@ -7,7 +7,7 @@
     add_newline = true;
     command_timeout = 500;
     continuation_prompt = "[∙](bright-black) ";
-    format = "$username$hostname$localip$shlvl(fg:0x9A348E bg:0xDA627D)$directory$git_branch$git_commit$git_state$git_metrics$git_status$hg_branch(fg:0x86BBD8 bg:0x06969A)$docker_context$package(fg:0xFCA17D bg:0x86BBD8)$c$cmake$cobol$container$daml$dart$deno$dotnet$elixir$elm$erlang$golang$haskell$helm$java$julia$kotlin$lua$nim$nodejs$ocaml$perl$php$pulumi$purescript$python$rlang$red$ruby$rust$scala$swift$terraform$vlang$vagrant$zig$nix_shell$conda$spack$memory_usage$aws$gcloud$openstack$azure$env_var$crystal$custom$sudo$cmd_duration$line_break$jobs$battery(fg:0x06969A bg:0x33658A)$time$status$shell$character";
+    format = "$nix_shell$username$hostname$localip$directory$git_branch$git_commit$git_state$git_metrics$git_status$docker_context$python$sudo$cmd_duration$line_break$time$status$shell$character";
     right_format = "";
     scan_timeout = 30;
     
@@ -545,12 +545,11 @@
         detect_folders = [];
     };
     nix_shell = {
-        format = "[$symbol$state( ($name))]($style) ";
-        disabled = true;
+        format = "[$state( ($name))]($style) ";
+        disabled = false;
         impure_msg = "[impure](bold red)";
         pure_msg = "[pure](bold green)";
         style = "bold blue";
-        symbol = " ";
     };
     nodejs = {
         format = "[$symbol($version )]($style)";
