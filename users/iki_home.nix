@@ -25,7 +25,6 @@
     # misc
     file
     which
-    tree
   
     # nix related
     #
