@@ -6,7 +6,7 @@
   config = {
     borderless = true;
     tab_position = "hidden";
-    window_stare = "maximise";
+    window_state = "maximise";
 
     profiles.default = {
         background_type = "transparent";
