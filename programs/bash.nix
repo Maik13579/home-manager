@@ -26,6 +26,6 @@
       dev = "nix develop";
       ls = "eza";
       ll = "eza -la";
-      tree = "eza -Ta";
+      tree = "eza -T";
     };
 }
