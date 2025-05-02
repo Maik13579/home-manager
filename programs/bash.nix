@@ -25,6 +25,6 @@
     shellAliases = {
       dev = "nix develop";
       ls = "eza";
-      ll = "eza -l";
+      ll = "eza -la";
     };
 }
