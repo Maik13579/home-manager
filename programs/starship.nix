@@ -186,7 +186,7 @@
         disabled = false;
         fish_style_pwd_dir_length = 0;
         format = "[$path]($style)[$read_only]($read_only_style) ";
-        home_symbol = "🏠";
+        home_symbol = "~";
         read_only = " 📖";
         read_only_style = "red";
         repo_root_format = "[$before_root_path]($style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) ";
