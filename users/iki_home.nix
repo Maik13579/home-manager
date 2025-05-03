@@ -16,6 +16,7 @@
     nixvim_pkg
 
     lazygit
+    xclip
 
     nerd-fonts.jetbrains-mono
     neofetch
