@@ -19,12 +19,13 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+      nixvim_pkg = nixvim.packages.${system}.default;
     in
     {
       homeConfigurations."iki" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [ ./users/iki_home.nix ];
-        extraSpecialArgs = { inherit nixvim; };
+        extraSpecialArgs = { inherit nixvim_pkg; };
       };
     };
 }

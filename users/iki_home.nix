@@ -1,4 +1,4 @@
-{ config, pkgs, nixvim, ... }:
+{ config, pkgs, nixvim_pkg, ... }:
 
 {
   home.username = "iki";
@@ -7,8 +7,8 @@
   programs = (import ../programs/programs.nix { inherit pkgs; });
 
   home.packages = with pkgs; [
-    nixvim
-    
+    nixvim_pkg
+
     neofetch
     nnn # terminal file manager
 
