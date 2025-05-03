@@ -15,6 +15,8 @@
   home.packages = with pkgs; [
     nixvim_pkg
 
+    lazygit
+
     nerd-fonts.jetbrains-mono
     neofetch
     nnn # terminal file manager
