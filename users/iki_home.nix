@@ -22,6 +22,9 @@
     neofetch
     nnn # terminal file manager
 
+    clang
+    clang-tools
+
     # archives
     zip
     xz
