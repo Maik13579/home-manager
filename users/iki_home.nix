@@ -1,4 +1,9 @@
-{ config, pkgs, nixvim_pkg, ... }:
+{
+  config,
+  pkgs,
+  nixvim_pkg,
+  ...
+}:
 
 {
   home.username = "iki";
@@ -6,9 +11,11 @@
 
   programs = (import ../programs/programs.nix { inherit pkgs; });
 
+  fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
     nixvim_pkg
 
+    nerd-fonts.jetbrains-mono
     neofetch
     nnn # terminal file manager
 
@@ -27,7 +34,7 @@
     # misc
     file
     which
-  
+
     # nix related
     #
     # it provides the command `nom` works just like `nix`
@@ -36,7 +43,7 @@
 
     glow # markdown previewer in terminal
 
-    btop  # replacement of htop/nmon
+    btop # replacement of htop/nmon
     iotop # io monitoring
     iftop # network monitoring
 
@@ -52,8 +59,6 @@
     pciutils # lspci
     usbutils # lsusb
   ];
-
-    
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -71,7 +76,7 @@
   };
 
   home.sessionVariables = {
-    EDITOR = "vim";
+    EDITOR = "nvim";
   };
 
   # This value determines the Home Manager release that your configuration is
