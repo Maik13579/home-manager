@@ -27,6 +27,5 @@
       ls = "eza";
       ll = "eza -la";
       tree = "eza -T";
-      nvim = "nix run 'github:maik13579/nixvim'";
     };
 }

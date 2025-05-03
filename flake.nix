@@ -8,10 +8,14 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixvim =  {
+      url = "github:maik13579/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
-    { nixpkgs, home-manager, ... }:
+    { nixpkgs, home-manager, nixvim, ... }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -20,6 +24,7 @@
       homeConfigurations."iki" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [ ./users/iki_home.nix ];
+        extraSpecialArgs = { inherit nixvim; };
       };
     };
 }
