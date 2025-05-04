@@ -30,6 +30,6 @@
     tree = "eza -T";
     hms = "home-manager switch";
     lg = "lazygit";
-    nv = "nvim";
+    nv = "nvim .";
   };
 }
