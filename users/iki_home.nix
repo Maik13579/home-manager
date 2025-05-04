@@ -14,6 +14,8 @@
   fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
     nixvim_pkg
+    alejandra # nix format
+    nixd # lsp
 
     lazygit
     xclip
