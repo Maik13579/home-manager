@@ -29,7 +29,7 @@
     {
       homeConfigurations."iki" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./users/iki_home.nix ];
+        modules = [ ./users/iki/home.nix ];
         extraSpecialArgs = { inherit nixvim_pkg; };
       };
     };

@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   nixvim_pkg,
   ...
@@ -9,7 +8,7 @@
   home.username = "iki";
   home.homeDirectory = "/home/iki";
 
-  programs = (import ../programs/programs.nix { inherit pkgs; });
+  programs = (import ./programs/default.nix { inherit pkgs; });
 
   fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
