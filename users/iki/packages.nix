@@ -1,8 +1,6 @@
-{ pkgs, nixvim_pkg, ... }:
+{ pkgs, ... }:
 with pkgs;
 [
-  #editor
-  nixvim_pkg
   lazygit
   xclip
   clang
