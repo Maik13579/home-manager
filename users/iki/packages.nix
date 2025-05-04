@@ -1,7 +1,6 @@
 { pkgs, ... }:
 with pkgs;
 [
-  lazygit
   xclip
   clang
   clang-tools
@@ -19,7 +18,6 @@ with pkgs;
   # utils
   ripgrep # recursively searches directories for a regex pattern
   yq-go # yaml processor https://github.com/mikefarah/yq
-  eza # A modern replacement for ‘ls’
   fzf # A command-line fuzzy finder
 
   # misc
@@ -35,8 +33,6 @@ with pkgs;
   nixd # lsp
 
   glow # markdown previewer in terminal
-
-  btop # replacement of htop/nmon
 
   # system tools
   pciutils # lspci

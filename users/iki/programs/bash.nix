@@ -25,9 +25,6 @@
 
   shellAliases = {
     dev = "nix develop";
-    ls = "eza";
-    ll = "eza -la";
-    tree = "eza -T";
     hms = "home-manager switch";
     lg = "lazygit";
     nv = "nvim .";
