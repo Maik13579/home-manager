@@ -4,7 +4,6 @@ with pkgs;
   xclip
   clang
   clang-tools
-  universal-ctags
 
   nerd-fonts.jetbrains-mono
 
