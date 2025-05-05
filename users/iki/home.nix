@@ -8,7 +8,7 @@
   home.username = "iki";
   home.homeDirectory = "/home/iki";
 
-  programs = (import ./programs/default.nix { inherit pkgs; });
+  programs = (import ./programs { inherit pkgs; });
   home.packages = import ./packages.nix { inherit pkgs; } ++ [ nixvim_pkg ];
 
   fonts.fontconfig.enable = true;
