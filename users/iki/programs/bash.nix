@@ -24,7 +24,7 @@
   '';
 
   shellAliases = {
-    dev = "nix develop";
+    dev = "nix develop ./";
     hms = "home-manager switch";
     lg = "lazygit";
     nv = "nvim .";
