@@ -21,10 +21,18 @@
     reset_audio(){
       pulseaudio -k && sudo alsa force-reload
     }
+
+    dev() {
+      if [ $# -eq 0 ]; then
+        nix develop ./
+      else
+        nix develop ./"$1"
+      fi
+    }
+
   '';
 
   shellAliases = {
-    dev = "nix develop ./";
     hms = "home-manager switch";
     lg = "lazygit";
     nv = "nvim .";
