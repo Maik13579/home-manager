@@ -9,7 +9,6 @@
   home.homeDirectory = "/home/iki";
 
   programs = (import ./programs { inherit pkgs; });
-  home.services = import ./services { inherit pkgs; };
   home.packages = import ./packages.nix { inherit pkgs; } ++ [ nixvim_pkg ];
 
   fonts.fontconfig.enable = true;
