@@ -30,6 +30,23 @@
       fi
     }
 
+    # Workspace commands
+    activate_workspace() {
+      # Create or update the ~/.workspace symlink to the current directory
+      ln -sfn "$(pwd)" ~/.workspace
+    }
+
+    disable_workspace() {
+      # Remove the symlink only if it exists
+      [ -e ~/.workspace ] && rm ~/.workspace
+    }
+
+    # Enter the workspace only if the symlink exists
+    [ -e ~/.workspace ] && cd ~/.workspace
+
+
+
+    # Nix commands
     show_nix_tree(){
       if [ $# -eq 0 ]; then
         nix run github:craigmbooth/nix-visualize -- result
