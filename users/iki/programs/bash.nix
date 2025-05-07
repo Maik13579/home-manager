@@ -49,6 +49,15 @@
       fi
     }
 
+    nix_add_root(){
+      if [ $# -lt 2 ]; then
+        echo "Usage: nix_add_root [path] [pkg]"
+        echo "Creates a symlink at [path] pointing to [pkg] that keeps the package safe from garbage collect as long as the symlink is alive"
+      else
+        nix-store --add-root "$1" --indirect -r "$2"
+      fi
+    }
+
   '';
 
   shellAliases = {
