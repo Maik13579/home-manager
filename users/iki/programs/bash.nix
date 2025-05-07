@@ -58,6 +58,10 @@
       fi
     }
 
+    nix_print_root(){
+      eza -l --no-user --no-filesize --no-permissions -h /nix/var/nix/gcroots/auto/
+    }
+
   '';
 
   shellAliases = {
