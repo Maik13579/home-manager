@@ -42,7 +42,7 @@
     }
 
     # Enter the workspace only if the symlink exists
-    [ -e ~/.workspace ] && cd ~/.workspace
+    [ -e ~/.workspace ] && cd -P ~/.workspace
 
 
 
