@@ -9,6 +9,8 @@ with pkgs;
 
   neofetch
 
+  feh
+
   # archives
   zip
   xz

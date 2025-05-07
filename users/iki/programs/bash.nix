@@ -30,6 +30,17 @@
       fi
     }
 
+    show_nix_tree(){
+      if [ $# -eq 0 ]; then
+        nix run github:craigmbooth/nix-visualize -- result
+      else
+        nix run github:craigmbooth/nix-visualize -- "$1"
+      fi
+
+      feh frame.png
+      rm frame.png
+    }
+
   '';
 
   shellAliases = {
