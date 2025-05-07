@@ -41,6 +41,14 @@
       rm frame.png
     }
 
+    show_nix_size(){
+      if [ $# -eq 0 ]; then
+        nix-store -qR result   | xargs du -hd0 -c   | sort -h
+      else
+        nix-store -qR "$1"   | xargs du -hd0 -c   | sort -h
+      fi
+    }
+
   '';
 
   shellAliases = {
