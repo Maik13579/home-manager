@@ -47,7 +47,7 @@
 
 
     # Nix commands
-    show_nix_tree(){
+    nix_tree(){
       if [ $# -eq 0 ]; then
         nix run github:craigmbooth/nix-visualize -- result
       else
@@ -58,7 +58,7 @@
       rm frame.png
     }
 
-    show_nix_size(){
+    nix_size(){
       if [ $# -eq 0 ]; then
         nix-store -qR result   | xargs du -hd0 -c   | sort -h
       else
