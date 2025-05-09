@@ -85,5 +85,6 @@
     hms = "home-manager switch";
     lg = "lazygit";
     nv = "nvim .";
+    good_commit = "curl -s https://whatthecommit.com/index.txt";
   };
 }
