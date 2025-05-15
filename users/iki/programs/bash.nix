@@ -22,6 +22,13 @@
       pulseaudio -k && sudo alsa force-reload
     }
 
+    nv() {
+      if [ $# -eq 0 ]; then
+        nvim .
+      else
+        nvim "$1"
+      fi
+    }
     dev() {
       if [ $# -eq 0 ]; then
         nix develop ./
@@ -84,7 +91,6 @@
   shellAliases = {
     hms = "home-manager switch";
     lg = "lazygit";
-    nv = "nvim .";
     good_commit = "curl -s https://whatthecommit.com/index.txt";
   };
 }
