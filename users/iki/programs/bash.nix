@@ -92,5 +92,6 @@
     hms = "home-manager switch";
     lg = "lazygit";
     good_commit = "curl -s https://whatthecommit.com/index.txt";
+    ros2nix_shell = "nix shell github:wentasah/ros2nix";
   };
 }
