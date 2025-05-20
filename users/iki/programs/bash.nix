@@ -99,5 +99,7 @@
     ikipkg = "nix run pkgs-utils#ikipkg --";
     ikiws = "nix run pkgs-utils#ikiws --";
     ros2nix = "nix run pkgs-utils#ros2nix --";
+    run = "nix run";
+    show = "nix flake show";
   };
 }
