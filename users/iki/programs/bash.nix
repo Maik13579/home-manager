@@ -101,5 +101,6 @@
     ros2nix = "nix run pkgs-utils#ros2nix --";
     run = "nix run";
     show = "nix flake show";
+    build = "nix build";
   };
 }
