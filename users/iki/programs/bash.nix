@@ -86,6 +86,9 @@
       eza -l --no-user --no-filesize --no-permissions -h /nix/var/nix/gcroots/auto/
     }
 
+    #source iki token
+    [ -e ~/.config/.ikitoken ] && source ~/.config/.ikitoken
+
   '';
 
   shellAliases = {
@@ -93,6 +96,8 @@
     lg = "lazygit";
     good_commit = "curl -s https://whatthecommit.com/index.txt";
     ros2nix_shell = "nix shell github:wentasah/ros2nix";
-    ros2nix = "nix shell github:wentasah/ros2nix --command ros2nix $(find -name package.xml) --nixfmt --distro jazzy --no-default";
+    ikipkg = "nix run pkgs-utils#ikipkg --";
+    ikiws = "nix run pkgs-utils#ikiws --";
+    ros2nix = "nix run pkgs-utils#ros2nix --";
   };
 }
