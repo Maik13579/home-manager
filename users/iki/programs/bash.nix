@@ -89,6 +89,10 @@
     #source iki token
     [ -e ~/.config/.ikitoken ] && source ~/.config/.ikitoken
 
+
+    # make sure this dir exists
+    mkdir -p /tmp/test
+
   '';
 
   shellAliases = {
