@@ -373,11 +373,11 @@
         "ros2nix": "ros2nix"
       },
       "locked": {
-        "lastModified": 1748855008,
-        "narHash": "sha256-7s+WVzYabyk+j+UO5ufjXl7MKJB9JychOpsz5i9eorM=",
+        "lastModified": 1748895243,
+        "narHash": "sha256-waZrXERkxeYVFNkPvmk+KUMLQmlxtWJFm2KvRmZmA7o=",
         "ref": "main",
-        "rev": "619aa5cdfaf2a4a6e853a052a9916ca508b2e3b9",
-        "revCount": 121,
+        "rev": "3d649aa520ceed390f66417c85b8bf553446fc5c",
+        "revCount": 154,
         "type": "git",
         "url": "ssh://git@gitlab.rwu.de/prj-iki-ros2/pkgs/pkgs_utils.git"
       },
