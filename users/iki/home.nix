@@ -1,7 +1,6 @@
 {
   pkgs,
   nixvim_pkg,
-  ikiPkgs,
   ...
 }:
 
@@ -12,7 +11,6 @@
   programs = (import ./programs { inherit pkgs; });
   home.packages = import ./packages.nix { inherit pkgs; } ++ [
     nixvim_pkg
-    ikiPkgs.ikipkg
   ];
 
   fonts.fontconfig.enable = true;
