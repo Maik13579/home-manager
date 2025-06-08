@@ -40,11 +40,13 @@
           # One arg: path to flake
           cd "$1" || return
           nix develop ./
+          cd --
           ;;
         2)
           # Two args: path + ref
           cd "$1" || return
           nix develop .#"$2"
+          cd --
           ;;
         *)
           echo "Usage: dev [path] [ref]" >&2
