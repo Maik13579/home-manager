@@ -33,7 +33,7 @@
       if [ $# -eq 0 ]; then
         nix develop ./
       else
-        nix develop ./"$1"
+        nix develop "$1"
       fi
     }
 
