@@ -29,13 +29,30 @@
         nvim "$1"
       fi
     }
+
     dev() {
-      if [ $# -eq 0 ]; then
-        nix develop ./
-      else
-        nix develop "$1"
-      fi
+      case $# in
+        0)
+          # No args: develop current flake
+          nix develop ./
+          ;;
+        1)
+          # One arg: path to flake
+          cd "$1" || return
+          nix develop ./
+          ;;
+        2)
+          # Two args: path + ref
+          cd "$1" || return
+          nix develop .#"$2"
+          ;;
+        *)
+          echo "Usage: dev [path] [ref]" >&2
+          return 1
+          ;;
+      esac
     }
+
 
     # Workspace commands
     activate_workspace() {
