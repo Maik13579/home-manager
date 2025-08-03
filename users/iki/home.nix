@@ -15,7 +15,9 @@
 
   fonts.fontconfig.enable = true;
 
-  home.file = { };
+  home.file = {
+    ".local/bin/repo2promt.sh".source = ../../scripts/repo2promt.sh;
+  };
 
   home.sessionVariables = {
     EDITOR = "nvim";
