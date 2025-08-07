@@ -121,5 +121,6 @@
     run = "nix run";
     show = "nix flake show";
     build = "nix build";
+    mine = "sudo chown iki -R .";
   };
 }
