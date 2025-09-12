@@ -4,6 +4,38 @@
   ...
 }:
 
+let
+  # Flake path for your ROS shells (must be a flake)
+  rosFlake = "path:${../../ros2}";
+
+  # Declare wrappers: { name = installed script; attr = devShell attr }
+  rosWrappers = [
+    {
+      name = "ros2";
+      attr = "default";
+    }
+    {
+      name = "rviz2";
+      attr = "rviz2";
+    }
+    {
+      name = "rqt";
+      attr = "rqt";
+    }
+  ];
+
+  # Build a home.file entry for each wrapper
+  mkRosWrapper = pair: {
+    name = ".local/bin/${pair.name}";
+    value = {
+      text = ''
+        #!/usr/bin/env bash
+        exec nix develop ${rosFlake}#${pair.attr}
+      '';
+      executable = true;
+    };
+  };
+in
 {
   home.username = "iki";
   home.homeDirectory = "/home/iki";
@@ -15,20 +47,18 @@
 
   fonts.fontconfig.enable = true;
 
-  home.file = {
-    ".local/bin/repo2promt.sh".source = ../../scripts/repo2promt.sh;
-  };
+  # Files to place under $HOME
+  home.file =
+    {
+      ".local/bin/repo2promt.sh".source = ../../scripts/repo2promt.sh;
+    }
+    # add generated ROS wrappers
+    // builtins.listToAttrs (map mkRosWrapper rosWrappers);
 
   home.sessionVariables = {
     EDITOR = "nvim";
   };
 
-  # This value determines the Home Manager release that your configuration is
-  # compatible with. This helps avoid breakage when a new Home Manager release
-  # introduces backwards incompatible changes.
-  #
-  # You should not change this value, even if you update Home Manager. If you do
-  # want to update the value, then make sure to first check the Home Manager
-  # release notes.
-  home.stateVersion = "24.11"; # Please read the comment before changing.
+  # Home Manager state version
+  home.stateVersion = "24.11";
 }
