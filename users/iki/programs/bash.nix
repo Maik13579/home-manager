@@ -105,12 +105,14 @@
       eza -l --no-user --no-filesize --no-permissions -h /nix/var/nix/gcroots/auto/
     }
 
-    #source iki token
+    #source stuff
     [ -e ~/.config/.ikitoken ] && source ~/.config/.ikitoken
-
+    [ -f "$HOME/.config/bash/drun.bash" ] && source "$HOME/.config/bash/drun.bash"
 
     # make sure this dir exists
     mkdir -p /tmp/test
+
+
 
   '';
 

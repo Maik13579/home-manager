@@ -51,6 +51,7 @@ in
   home.file =
     {
       ".local/bin/repo2promt.sh".source = ../../scripts/repo2promt.sh;
+      ".config/bash/drun.bash".source = ../../scripts/drun.bash;
     }
     # add generated ROS wrappers
     // builtins.listToAttrs (map mkRosWrapper rosWrappers);
