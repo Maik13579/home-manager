@@ -4,7 +4,7 @@ drun() {
     echo "usage: drun [docker run options] IMAGE"
     return 1
   fi
-  docker run --rm -it -v /pkgs:/pkgs "$@" bash
+  docker run --rm -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:ro -it -v /pkgs:/pkgs "$@" bash
 }
 
 # Completion: delegate to Docker's "run" completion (fixes repeated TAB)

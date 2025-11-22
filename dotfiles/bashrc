@@ -1,0 +1,46 @@
+export TERM=xterm-256color
+
+export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
+export ROS_DOMAIN_ID=99
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+export EDITOR=nvim
+
+reset_audio(){
+  pulseaudio -k && sudo alsa force-reload
+}
+
+nv() {
+  if [ $# -eq 0 ]; then
+    nvim .
+  else
+    nvim "$1"
+  fi
+}
+
+# Workspace commands
+activate_workspace() {
+  # Create or update the ~/.workspace symlink to the current directory
+  ln -sfn "$(pwd)" ~/.workspace
+}
+
+disable_workspace() {
+  # Remove the symlink only if it exists
+  [ -e ~/.workspace ] && rm ~/.workspace
+}
+
+# Enter the workspace only if the symlink exists
+[ -e ~/.workspace ] && cd -P ~/.workspace
+
+
+#source stuff
+[ -e ~/.config/.ikitoken ] && source ~/.config/.ikitoken
+[ -f "$HOME/.config/bash/drun.bash" ] && source "$HOME/.config/bash/drun.bash"
+
+# make sure this dir exists
+mkdir -p /tmp/test
+
+# Aliases
+alias hms='home-manager switch'
+alias dps='docker ps --format '\''table {{.ID}}	{{.Names}}	{{.Status}}'\'''
+alias lg=lazygit
+alias mine='sudo chown iki -R .'
