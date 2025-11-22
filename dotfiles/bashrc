@@ -35,6 +35,7 @@ disable_workspace() {
 #source stuff
 [ -e ~/.config/.ikitoken ] && source ~/.config/.ikitoken
 [ -f "$HOME/.config/bash/drun.bash" ] && source "$HOME/.config/bash/drun.bash"
+[ -f "$HOME/.config/bash/clone.bash" ] && source "$HOME/.config/bash/clone.bash"
 
 # make sure this dir exists
 mkdir -p /tmp/test
@@ -44,3 +45,4 @@ alias hms='home-manager switch'
 alias dps='docker ps --format '\''table {{.ID}}	{{.Names}}	{{.Status}}'\'''
 alias lg=lazygit
 alias mine='sudo chown iki -R .'
+
