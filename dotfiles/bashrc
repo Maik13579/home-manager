@@ -42,6 +42,7 @@ mkdir -p /tmp/test
 # Aliases
 alias hms='home-manager switch'
 alias dps='docker ps --format '\''table {{.ID}}	{{.Names}}	{{.Status}}'\'''
+alias docker_clean='docker rm -f $(docker ps -aq)'
 alias lg=lazygit
 alias mine='sudo chown iki -R .'
 
